@@ -44,11 +44,11 @@ During the observation period, the minimum total number of steps on a daily basi
 You also had around 28 days where the number of steps were between the mean and the 3rd quartile
 
 ## What is the average daily activity pattern?
-The average daily activty pattern is plotted below and it shows the peak activity during the time intervals of roughly 9:00 - 10:00, possibly people settling down into the work environment.
+The average daily activty pattern is plotted below and it shows the peak activity during the time intervals of roughly 8:00 - 9:30, possibly people getting into work with the highest activity at the 8:35 interval.
 
 ```{r}
-int_tot <- aggregate(steps ~ interval, data = activity, sum, na.action = na.omit)
-with(int_tot, plot(interval, steps, type = 'l'))
+int_avg <- aggregate(steps ~ interval, data = activity, mean, na.action = na.omit)
+with(int_avg, plot(interval, steps, type = 'l'))
 ```
 
 ## Imputing missing values
